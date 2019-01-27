@@ -8,7 +8,8 @@
         ],
         "target": "es6",
         "module": "esnext",
-        "lib": ["es2015", "dom"],
+        "moduleResolution": "node",
+        "lib": ["es2015", "dom", "dom.iterable"],
         "strict": true,
         "outDir": "lib"
     },
