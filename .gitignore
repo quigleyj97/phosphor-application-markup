@@ -1,0 +1,8 @@
+# Modules
+/node_modules
+
+# Compiled output
+/lib
+
+# Yarn error barf
+yarn-error.log
