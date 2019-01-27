@@ -1,0 +1,9 @@
+<BoxPanel>
+    <Label BoxLayout.SizeBasis="50"
+            BoxLayout.Stretch="0">
+        Hello, world!
+    </Label>
+    <Image BoxLayout.Stretch="1"
+            href="https://placekitten.com/g/200/300"
+            alt="Kitten"/>
+</BoxPanel>
