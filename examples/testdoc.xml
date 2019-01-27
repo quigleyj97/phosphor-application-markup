@@ -1,9 +1,12 @@
 <BoxPanel>
     <Label BoxLayout.SizeBasis="50"
-            BoxLayout.Stretch="0">
+           BoxLayout.Stretch="0">
         Hello, world!
     </Label>
-    <Image BoxLayout.Stretch="1"
-            href="https://placekitten.com/g/200/300"
-            alt="Kitten"/>
+    <BoxPanel BoxLayout.Stretch="1"
+           data-orientation="horizontal">
+        <Image href="https://placekitten.com/g/200/300"
+               alt="Kitten"/>
+        <Image href="http://place-puppy.com/200x200"
+               alt="Pupper">
 </BoxPanel>
