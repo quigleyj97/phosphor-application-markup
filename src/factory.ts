@@ -5,7 +5,7 @@ import { Widget } from "@phosphor/widgets";
  * A widget factory for PAM applications.
  */
 export class WidgetFactory {
-    private readonly ctorRegistry = new Map<string, typeof Widget>();
+    private readonly ctorRegistry = new Map<string, WidgetFactory.Constructor>();
     private readonly propRegistry = new Map<string, WidgetFactory.IAttachedProperty>();
 
     /**
@@ -26,7 +26,7 @@ export class WidgetFactory {
      * may cause problems, either in user understanding or interfacing with the
      * HTML DOM.
      */
-    public registerWidget(name: string, ctor: typeof Widget) {
+    public registerWidget(name: string, ctor: WidgetFactory.Constructor) {
         if (this.ctorRegistry.has(name)) {
             throw Error("Widget " + name + " is already registered");
         }
@@ -98,5 +98,10 @@ export namespace WidgetFactory {
     export interface IAttachedProperty<T = unknown, U = unknown> {
         get(owner: T): U;
         set(owner: T, value: U): void; 
+    }
+
+    /** A convenience type to express a constructor in a covariant way */
+    export type Constructor = {
+        new(...args: any[]): Widget
     }
 }
