@@ -75,7 +75,9 @@ export class MarkupLoader {
             // If it's a text node or a comment node, insert it directly into
             // the DOM.
             if (childNode instanceof Text || childNode instanceof Comment) {
-                widget.node.appendChild(childNode);
+                // don't import the subtree if there is one
+                const newNode = document.importNode(childNode, false);
+                widget.node.appendChild(newNode);
                 continue;
             }
             if (!(childNode instanceof Element)) {
