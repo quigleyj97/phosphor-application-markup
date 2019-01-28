@@ -1,4 +1,3 @@
-import { AttachedProperty } from "@phosphor/properties";
 import { Widget } from "@phosphor/widgets";
 
 /**

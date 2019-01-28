@@ -1,4 +1,4 @@
-import { BoxPanel, Panel, SplitPanel, StackedPanel, TabPanel, Widget, BoxLayout, Layout, SplitLayout } from "@phosphor/widgets";
+import { BoxPanel, Panel, SplitPanel, StackedPanel, TabPanel, BoxLayout, Layout, SplitLayout } from "@phosphor/widgets";
 import { DOMWrapper } from "./wrapper";
 import { WidgetFactory } from "../factory";
 
