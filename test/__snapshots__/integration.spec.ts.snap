@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Integration test Should render the HelloWorld example 1`] = `
+"<div class=\\"p-Widget p-Panel p-BoxPanel\\" data-direction=\\"top-to-bottom\\" data-alignment=\\"start\\">
+    <label class=\\"p-Widget p-BoxPanel-child\\" style=\\"position: absolute;\\">
+        Hello, world!
+    </label>
+    <div class=\\"p-Widget p-Panel p-BoxPanel p-BoxPanel-child\\" data-direction=\\"left-to-right\\" data-alignment=\\"start\\" style=\\"position: absolute;\\">
+        <img class=\\"p-Widget p-BoxPanel-child\\" href=\\"https://placekitten.com/g/200/300\\" alt=\\"Kitten\\" style=\\"position: absolute;\\">
+        <img class=\\"p-Widget p-BoxPanel-child\\" href=\\"http://place-puppy.com/200x200\\" alt=\\"Pupper\\" style=\\"position: absolute;\\">
+    </div>
+</div>"
+`;
