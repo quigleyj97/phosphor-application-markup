@@ -2,8 +2,8 @@
   "name": "phosphor-application-markup",
   "version": "0.0.1",
   "description": "An experimental XML parser for turning markup into Phosphor components",
-  "main": "index.js",
-  "repository": "github.com/quigleyj97/phosphor-application-markup",
+  "main": "lib/index.js",
+  "repository": "https://github.com/quigleyj97/phosphor-application-markup",
   "author": "Joe Quigley",
   "license": "MIT",
   "dependencies": {
@@ -11,6 +11,9 @@
     "@phosphor/properties": "^1.1.2",
     "@phosphor/widgets": "^1.6.0"
   },
+  "files": [
+    "lib/*.js"
+  ],
   "devDependencies": {
     "@fimbul/mithotyn": "^0.18.0",
     "@fimbul/wotan": "^0.19.0",
