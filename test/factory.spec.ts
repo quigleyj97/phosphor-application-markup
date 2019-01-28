@@ -42,7 +42,7 @@ describe("WidgetFactory", () => {
     test("Should register and retrieve Attached Properties", () => {
         const prop = new AttachedProperty({
             name: "foo",
-            create: () => null,
+            create: () => null as any,
         });
         factory.registerProperty("Foo", prop);
         const retrievedProp = factory.getProperty("Foo");

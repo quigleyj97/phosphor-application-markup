@@ -94,8 +94,10 @@ export namespace WidgetFactory {
      * This is necessary to work around the fact that many Phosphor framework
      * properties are not directly exposed- things like BoxLayout.Stretch are
      * implemented using this restricted interface.
+     * 
+     * TODO: Resolve value serialization
     */
-    export interface IAttachedProperty<T = unknown, U = unknown> {
+    export interface IAttachedProperty<T = Widget, U = string> {
         get(owner: T): U;
         set(owner: T, value: U): void; 
     }
