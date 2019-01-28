@@ -1,6 +1,5 @@
 import { WidgetFactory } from "./factory";
-import { MessageLoop } from "@phosphor/messaging";
-import { Widget } from "@phosphor/widgets";
+import { Widget, PanelLayout } from "@phosphor/widgets";
 
 /**
  * Injests some markup, and returns a widget
@@ -91,11 +90,22 @@ export class MarkupLoader {
                 continue;
             }
             // else it's a full node, process it
+            // TODO: What to do about DockLayout, GridLayout, SingletonLayout?
+            // They don't follow this API and need some other behavior. Further,
+            // since Phosphor provides no uniform way of adding a new child
+            // (aside from implementing a common superclass, like PanelLayout),
+            // there's no guarantee that third party widgets will play nice with
+            // this assumption
+            if ((node.children.length > 0) 
+                && !(widget.layout instanceof PanelLayout))
+            {
+                console.info("[PAM- Loader]", "Skipping any children of node");
+                console.info(node);
+                console.info("Widget does not support PanelLayout");
+            }
             try {
                 const childWidget = this.instantiateWidgetForNode(childNode);
-                // Message the widget about this new child
-                const msg = new Widget.ChildMessage("child-added", childWidget);
-                MessageLoop.postMessage(widget, msg);
+                (widget.layout! as PanelLayout).addWidget(childWidget);
             } catch (err) {
                 // continue, but warn.
                 console.warn("[PAM- Loader]", "Failed to create child node");
