@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "esnext",
+        "moduleResolution": "node",
+        "lib": ["es2015", "dom"],
+        "strict": true
+    },
+    "files": [
+        "./hello-pam.ts",
+        "./xml.d.ts"
+    ]
+}

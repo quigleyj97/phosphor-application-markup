@@ -1,0 +1,22 @@
+{
+  "name": "example",
+  "version": "0.0.0",
+  "description": "Example for Phosphor Application Markup",
+  "main": "hello-pam.ts",
+  "author": "Joe Quigley",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@phosphor/default-theme": "^0.1.0",
+    "@phosphor/widgets": "^1.6.0",
+    "css-loader": "^2.1.0",
+    "file-loader": "^3.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^0.23.1",
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.2.4",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.29.0",
+    "webpack-cli": "^3.2.1"
+  }
+}
