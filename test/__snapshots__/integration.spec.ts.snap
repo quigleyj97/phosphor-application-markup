@@ -6,8 +6,8 @@ exports[`Integration test Should render the HelloWorld example 1`] = `
         Hello, world!
     </label>
     <div class=\\"p-Widget p-Panel p-BoxPanel p-BoxPanel-child\\" data-direction=\\"left-to-right\\" data-alignment=\\"start\\" style=\\"position: absolute;\\">
-        <img class=\\"p-Widget p-BoxPanel-child\\" href=\\"https://placekitten.com/g/200/300\\" alt=\\"Kitten\\" style=\\"position: absolute;\\">
-        <img class=\\"p-Widget p-BoxPanel-child\\" href=\\"http://place-puppy.com/200x200\\" alt=\\"Pupper\\" style=\\"position: absolute;\\">
+        <img class=\\"p-Widget p-BoxPanel-child\\" src=\\"https://placekitten.com/g/200/300\\" alt=\\"Kitten\\" style=\\"position: absolute;\\">
+        <img class=\\"p-Widget p-BoxPanel-child\\" src=\\"http://place-puppy.com/200x200\\" alt=\\"Pupper\\" style=\\"position: absolute;\\">
     </div>
 </div>"
 `;

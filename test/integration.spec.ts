@@ -13,7 +13,6 @@ describe("Integration test", () => {
         let loader = new MarkupLoader();
         const out = loader.loadXml(file);
         MessageLoop.flush();
-        console.log((out as any));
         expect(out.node.outerHTML).toMatchSnapshot();
     })
 })
