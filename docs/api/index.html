@@ -65,9 +65,12 @@
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
 				<h1 id="phosphor-application-markup">Phosphor Application Markup</h1>
+				<p><a href="https://quigleyj97.github.io/phosphor-application-markup/"><img src="https://img.shields.io/badge/docs-PAM-green.svg?style=flat-square" alt="docs"></a>
+				<a href="https://github.com/quigleyj97/phosphor-application-markup/blob/master/LICENSE.md"><img src="https://img.shields.io/github/license/quigleyj97/phosphor-application-markup.svg?style=flat-square" alt="license"></a></p>
 				<p>PAM is an experimental framework for writing Phosphor widgets as XML markup.
 					This lets developers easily create complex components without needing to rely
 				on direct HTML manipulation or a VDOM library.</p>
+				<h2 id="why-">Why?</h2>
 				<p>Here&#39;s a short motivating example:</p>
 				<pre><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">BoxPanel</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">BoxLayout.SizeBasis</span>=<span class="hljs-string">"50"</span>
@@ -82,34 +85,30 @@
                <span class="hljs-attr">alt</span>=<span class="hljs-string">"Pupper"</span>/&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">BoxPanel</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">BoxPanel</span>&gt;</span></code></pre>
-				<p>The equivalent JS code for this is cumbersome, and repetitive:</p>
-				<pre><code class="language-ts"><span class="hljs-keyword">class</span> MyWidget <span class="hljs-keyword">extends</span> Widget {
-    <span class="hljs-keyword">public</span> layout: SingletonLayout;
+				<p><a href="https://quigleyj97.github.io/phosphor-application-markup/demo.html">See a live example here</a></p>
+				<p>The equivalent JS code is long, and distracting. With PAM, you can focus on the
+					interactions behind the view, and use straight-forward, idomatic XAML for the
+				layout and components.</p>
+				<h2 id="getting-started">Getting Started</h2>
+				<p>To write PAM, use the widget names as tags. Each child will get added to widgets
+					with layouts, each upper-case attribute will be treated as an AttachedProperty,
+				and each lower-case attribute will get copied to the widget node.</p>
+				<pre><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">TabPanel</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">data-foobar</span>=<span class="hljs-string">"Test!"</span>&gt;</span>
+        Here's some content!
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span>&gt;</span>
+        Isn't this fun?
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Label</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">TabPanel</span>&gt;</span></code></pre>
+				<p>To load the XML, instantiate a <code>MarkupLoader</code> and use it:</p>
+				<pre><code class="language-ts"><span class="hljs-keyword">const</span> loader = <span class="hljs-keyword">new</span> MarkupLoader();
+<span class="hljs-keyword">const</span> myWidget = loader.loadXml(<span class="hljs-string">"&lt;Panel /&gt;"</span>);</code></pre>
+				<p>You can register custom properties and widgets using <code>WidgetFactory</code>. There&#39;s
+				a global factory pre-instantiated for convenience:</p>
+				<pre><code class="language-ts">WidgetFactory.global.registerWidget(<span class="hljs-string">"MyFancyWidget"</span>, MyFancyWidget);
 
-    <span class="hljs-keyword">constructor</span>(<span class="hljs-params"></span>) {
-        <span class="hljs-keyword">const</span> panel = <span class="hljs-keyword">new</span> BoxPanel();
-        <span class="hljs-keyword">this</span>.layout.widget = panel;
-        <span class="hljs-keyword">const</span> label = <span class="hljs-keyword">new</span> Widget({node: <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"label"</span>)});
-        label.node.textContent = <span class="hljs-string">"Hello, world!"</span>;
-        BoxLayout.setSizeBasis(label, <span class="hljs-number">50</span>);
-        BoxLayout.setStretch(label, <span class="hljs-number">0</span>);
-        panel.addWidget(label);
-        <span class="hljs-keyword">const</span> panel2 = <span class="hljs-keyword">new</span> BoxPanel({direction: <span class="hljs-string">"left-to-right"</span>});
-        BoxLayout.setStretch(panel2, <span class="hljs-number">1</span>);
-        <span class="hljs-keyword">const</span> img1 = <span class="hljs-keyword">new</span> Widget({node: <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"img"</span>)});
-        img1.href = <span class="hljs-string">"https://placekitten.com/g/200/300"</span>;
-        img1.alt = <span class="hljs-string">"Kitten"</span>;
-        <span class="hljs-keyword">const</span> img2 = <span class="hljs-keyword">new</span> Widget({node: <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"img"</span>)});
-        img2.href = <span class="hljs-string">"http://place-puppy.com/200x200"</span>;
-        img2.alt = <span class="hljs-string">"Pupper"</span>;
-        panel2.addWidget(img1);
-        panel2.addWidget(img2);
-        panel.addwidget(panel2);
-        <span class="hljs-comment">// whew!</span>
-    }
-}</code></pre>
-				<p>In the future, this library will offer facilities for data binding, but for now
-				it&#39;s just a demo.</p>
+WidgetFactory.global.registerProperty(<span class="hljs-string">"MyProperty"</span>, MyAttachedProperty);</code></pre>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -118,31 +117,22 @@
 					<li class="globals  ">
 						<a href="globals.html"><em>Globals</em></a>
 					</li>
-					<li class="label tsd-is-external">
-						<span>Internals</span>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_index_.html">"index"</a>
-					</li>
-					<li class="label tsd-is-external">
-						<span>Externals</span>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/_builtin_index_.html">"builtin/index"</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/_builtin_wrapper_.html">"builtin/wrapper"</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/_factory_.html">"factory"</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/_loader_.html">"loader"</a>
-					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="classes/markuploader.html" class="tsd-kind-icon">Markup<wbr>Loader</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="classes/widgetfactory.html" class="tsd-kind-icon">Widget<wbr>Factory</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#domwrapper" class="tsd-kind-icon">DOMWrapper</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#registerdefaults" class="tsd-kind-icon">Register<wbr>Defaults</a>
+					</li>
 				</ul>
 			</nav>
 		</div>

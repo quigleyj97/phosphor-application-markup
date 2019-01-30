@@ -5,7 +5,7 @@ module.exports = {
     entry: "./hello-pam.js",
     mode: process.env.NODE_ENV || "development",
     output: {
-        path: resolve(__dirname, "..", "docs"),
+        path: resolve(__dirname, "..", "docs", "example"),
         filename: "demo.bundle.js",
     },
     module: {

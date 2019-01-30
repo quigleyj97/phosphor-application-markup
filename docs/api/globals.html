@@ -67,17 +67,93 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
-							<h3>External modules</h3>
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Classes</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-external-module tsd-is-external"><a href="modules/_builtin_index_.html" class="tsd-kind-icon">"builtin/index"</a></li>
-								<li class="tsd-kind-external-module tsd-is-external"><a href="modules/_builtin_wrapper_.html" class="tsd-kind-icon">"builtin/wrapper"</a></li>
-								<li class="tsd-kind-external-module tsd-is-external"><a href="modules/_factory_.html" class="tsd-kind-icon">"factory"</a></li>
-								<li class="tsd-kind-external-module"><a href="modules/_index_.html" class="tsd-kind-icon">"index"</a></li>
-								<li class="tsd-kind-external-module tsd-is-external"><a href="modules/_loader_.html" class="tsd-kind-icon">"loader"</a></li>
+								<li class="tsd-kind-class tsd-is-external"><a href="classes/markuploader.html" class="tsd-kind-icon">Markup<wbr>Loader</a></li>
+								<li class="tsd-kind-class tsd-is-external"><a href="classes/widgetfactory.html" class="tsd-kind-icon">Widget<wbr>Factory</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-has-type-parameter tsd-is-external"><a href="globals.html#domwrapper" class="tsd-kind-icon">DOMWrapper</a></li>
+								<li class="tsd-kind-function tsd-is-external"><a href="globals.html#registerdefaults" class="tsd-kind-icon">Register<wbr>Defaults</a></li>
 							</ul>
 						</section>
 					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter tsd-is-external">
+					<a name="domwrapper" class="tsd-anchor"></a>
+					<h3>DOMWrapper</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">DOMWrapper&lt;K&gt;<span class="tsd-signature-symbol">(</span>elName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">(Anonymous class)</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/quigleyj97/phosphor-application-markup/blob/7d7a934/src/builtin/wrapper.ts#L7">builtin/wrapper.ts:7</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>internal</dt>
+									<dd><p>A function that generates a widget wrapper for a given HTML element.</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>K<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">keyof HTMLElementTagNameMap</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>elName: <span class="tsd-signature-type">K</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">(Anonymous class)</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-is-external">
+					<a name="registerdefaults" class="tsd-anchor"></a>
+					<h3>Register<wbr>Defaults</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">Register<wbr>Defaults<span class="tsd-signature-symbol">(</span>factory<span class="tsd-signature-symbol">: </span><a href="classes/widgetfactory.html" class="tsd-signature-type">WidgetFactory</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/quigleyj97/phosphor-application-markup/blob/7d7a934/src/builtin/index.ts#L13">builtin/index.ts:13</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Register PAM default items to a factory.</p>
+								</div>
+								<p>This is called automatically for the global factory, but will need to be
+								manually called for anything else.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>factory: <a href="classes/widgetfactory.html" class="tsd-signature-type">WidgetFactory</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The factory to register against</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -87,31 +163,22 @@
 					<li class="globals current ">
 						<a href="globals.html"><em>Globals</em></a>
 					</li>
-					<li class="label tsd-is-external">
-						<span>Internals</span>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_index_.html">"index"</a>
-					</li>
-					<li class="label tsd-is-external">
-						<span>Externals</span>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/_builtin_index_.html">"builtin/index"</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/_builtin_wrapper_.html">"builtin/wrapper"</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/_factory_.html">"factory"</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/_loader_.html">"loader"</a>
-					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="classes/markuploader.html" class="tsd-kind-icon">Markup<wbr>Loader</a>
+					</li>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="classes/widgetfactory.html" class="tsd-kind-icon">Widget<wbr>Factory</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#domwrapper" class="tsd-kind-icon">DOMWrapper</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#registerdefaults" class="tsd-kind-icon">Register<wbr>Defaults</a>
+					</li>
 				</ul>
 			</nav>
 		</div>

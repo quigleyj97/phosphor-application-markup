@@ -56,10 +56,7 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_loader_.html">&quot;loader&quot;</a>
-				</li>
-				<li>
-					<a href="_loader_.markuploader.html">MarkupLoader</a>
+					<a href="markuploader.html">MarkupLoader</a>
 				</li>
 			</ul>
 			<h1>Class MarkupLoader</h1>
@@ -72,8 +69,23 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Injests some markup, and returns a widget</p>
+						<p>Class for loading PAM markup and transforming it into a Phosphor widget.</p>
 					</div>
+					<p>PAM markup is relatively straight-forward, and is written in XML. A simple
+					view might look like this:</p>
+					<pre><code class="language-xml"> <span class="hljs-tag">&lt;<span class="hljs-name">BoxPanel</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">BoxLayout.SizeBasis</span>=<span class="hljs-string">"10"</span>&gt;</span>Hello, world!<span class="hljs-tag">&lt;/<span class="hljs-name">Label</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">Image</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://placekitten.com/g/300/300"</span> /&gt;</span>
+ <span class="hljs-tag">&lt;/<span class="hljs-name">BoxPanel</span>&gt;</span></code></pre>
+					<p>This creates a <a href="http://phosphorjs.github.io/phosphor/api/widgets/classes/boxpanel.html"><code>BoxPanel</code></a>
+						with a Label and an Image. The Label has an &quot;Attached Property&quot; specified-
+						<code>BoxLayout.SizeBasis</code> tells BoxLayout how big (in pixels) to make a
+					particular widget.</p>
+					<p>Element attributes in lowercase (such as data attributes and HTML attrs) get
+						copied to the DOM, so the <code>img</code> element of the <code>Image</code> widget above gets it&#39;s
+					<code>src</code> set.</p>
+					<p>See <a href="/reference/builtin-reference.md">the Builtin Reference</a> for details on
+					what is included with base PAM</p>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -91,20 +103,20 @@
 						<section class="tsd-index-section tsd-is-external">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-external"><a href="_loader_.markuploader.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-external"><a href="markuploader.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-private tsd-is-private-protected tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="_loader_.markuploader.html#factory" class="tsd-kind-icon">factory</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="markuploader.html#factory" class="tsd-kind-icon">factory</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-external">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="_loader_.markuploader.html#instantiatewidgetfornode" class="tsd-kind-icon">instantiate<wbr>Widget<wbr>For<wbr>Node</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_loader_.markuploader.html#loadxml" class="tsd-kind-icon">load<wbr>Xml</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="markuploader.html#instantiatewidgetfornode" class="tsd-kind-icon">instantiate<wbr>Widget<wbr>For<wbr>Node</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="markuploader.html#loadxml" class="tsd-kind-icon">load<wbr>Xml</a></li>
 							</ul>
 						</section>
 					</div>
@@ -116,22 +128,22 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Markup<wbr>Loader<span class="tsd-signature-symbol">(</span>factory<span class="tsd-signature-symbol">?: </span><a href="_factory_.widgetfactory.html" class="tsd-signature-type">WidgetFactory</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_loader_.markuploader.html" class="tsd-signature-type">MarkupLoader</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Markup<wbr>Loader<span class="tsd-signature-symbol">(</span>factory<span class="tsd-signature-symbol">?: </span><a href="widgetfactory.html" class="tsd-signature-type">WidgetFactory</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="markuploader.html" class="tsd-signature-type">MarkupLoader</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/quigleyj97/phosphor-application-markup/blob/426abeb/src/loader.ts#L8">loader.ts:8</a></li>
+									<li>Defined in <a href="https://github.com/quigleyj97/phosphor-application-markup/blob/7d7a934/src/loader.ts#L30">loader.ts:30</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> factory: <a href="_factory_.widgetfactory.html" class="tsd-signature-type">WidgetFactory</a><span class="tsd-signature-symbol"> =&nbsp;WidgetFactory.global</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> factory: <a href="widgetfactory.html" class="tsd-signature-type">WidgetFactory</a><span class="tsd-signature-symbol"> =&nbsp;WidgetFactory.global</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_loader_.markuploader.html" class="tsd-signature-type">MarkupLoader</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="markuploader.html" class="tsd-signature-type">MarkupLoader</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -141,10 +153,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
 					<a name="factory" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> factory</h3>
-					<div class="tsd-signature tsd-kind-icon">factory<span class="tsd-signature-symbol">:</span> <a href="_factory_.widgetfactory.html" class="tsd-signature-type">WidgetFactory</a></div>
+					<div class="tsd-signature tsd-kind-icon">factory<span class="tsd-signature-symbol">:</span> <a href="widgetfactory.html" class="tsd-signature-type">WidgetFactory</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/quigleyj97/phosphor-application-markup/blob/426abeb/src/loader.ts#L8">loader.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/quigleyj97/phosphor-application-markup/blob/7d7a934/src/loader.ts#L30">loader.ts:30</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -161,7 +173,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/quigleyj97/phosphor-application-markup/blob/426abeb/src/loader.ts#L56">loader.ts:56</a></li>
+									<li>Defined in <a href="https://github.com/quigleyj97/phosphor-application-markup/blob/7d7a934/src/loader.ts#L78">loader.ts:78</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -184,7 +196,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/quigleyj97/phosphor-application-markup/blob/426abeb/src/loader.ts#L34">loader.ts:34</a></li>
+									<li>Defined in <a href="https://github.com/quigleyj97/phosphor-application-markup/blob/7d7a934/src/loader.ts#L56">loader.ts:56</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -221,52 +233,40 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class="label tsd-is-external">
-						<span>Internals</span>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_index_.html">"index"</a>
-					</li>
-					<li class="label tsd-is-external">
-						<span>Externals</span>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="../modules/_builtin_index_.html">"builtin/index"</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="../modules/_builtin_wrapper_.html">"builtin/wrapper"</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="../modules/_factory_.html">"factory"</a>
-					</li>
-					<li class="current tsd-kind-external-module tsd-is-external">
-						<a href="../modules/_loader_.html">"loader"</a>
-					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-class tsd-parent-kind-external-module tsd-is-external">
-						<a href="_loader_.markuploader.html" class="tsd-kind-icon">Markup<wbr>Loader</a>
+					<li class="current tsd-kind-class tsd-is-external">
+						<a href="markuploader.html" class="tsd-kind-icon">Markup<wbr>Loader</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-external">
-								<a href="_loader_.markuploader.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="markuploader.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
-								<a href="_loader_.markuploader.html#factory" class="tsd-kind-icon">factory</a>
+								<a href="markuploader.html#factory" class="tsd-kind-icon">factory</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external">
-								<a href="_loader_.markuploader.html#instantiatewidgetfornode" class="tsd-kind-icon">instantiate<wbr>Widget<wbr>For<wbr>Node</a>
+								<a href="markuploader.html#instantiatewidgetfornode" class="tsd-kind-icon">instantiate<wbr>Widget<wbr>For<wbr>Node</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
-								<a href="_loader_.markuploader.html#loadxml" class="tsd-kind-icon">load<wbr>Xml</a>
+								<a href="markuploader.html#loadxml" class="tsd-kind-icon">load<wbr>Xml</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="widgetfactory.html" class="tsd-kind-icon">Widget<wbr>Factory</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="../globals.html#domwrapper" class="tsd-kind-icon">DOMWrapper</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="../globals.html#registerdefaults" class="tsd-kind-icon">Register<wbr>Defaults</a>
+					</li>
 				</ul>
 			</nav>
 		</div>

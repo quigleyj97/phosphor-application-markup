@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;builtin/index&quot; | phosphor-application-markup</title>
+	<title>IAttachedProperty | phosphor-application-markup</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,58 +56,112 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_builtin_index_.html">&quot;builtin/index&quot;</a>
+					<a href="../classes/widgetfactory.html">WidgetFactory</a>
+				</li>
+				<li>
+					<a href="widgetfactory.iattachedproperty.html">IAttachedProperty</a>
 				</li>
 			</ul>
-			<h1>External module &quot;builtin/index&quot;</h1>
+			<h1>Interface IAttachedProperty&lt;T, U&gt;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>A restricted interface for attached properties.</p>
+					</div>
+					<p>This is necessary to work around the fact that many Phosphor framework
+						properties are not directly exposed- things like BoxLayout.Stretch are
+					implemented using this restricted interface.</p>
+					<p>TODO: Resolve value serialization</p>
+					<dl class="tsd-comment-tags">
+						<dt>internal</dt>
+						<dd></dd>
+					</dl>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-type-parameters">
+				<h3>Type parameters</h3>
+				<ul class="tsd-type-parameters">
+					<li>
+						<h4>T</h4>
+					</li>
+					<li>
+						<h4>U</h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">IAttachedProperty</span>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section tsd-is-external">
-							<h3>Functions</h3>
+							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-external"><a href="_builtin_index_.html#registerdefaults" class="tsd-kind-icon">Register<wbr>Defaults</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="widgetfactory.iattachedproperty.html#get" class="tsd-kind-icon">get</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="widgetfactory.iattachedproperty.html#set" class="tsd-kind-icon">set</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-external">
-				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-is-external">
-					<a name="registerdefaults" class="tsd-anchor"></a>
-					<h3>Register<wbr>Defaults</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">Register<wbr>Defaults<span class="tsd-signature-symbol">(</span>factory<span class="tsd-signature-symbol">: </span><a href="../classes/_factory_.widgetfactory.html" class="tsd-signature-type">WidgetFactory</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+					<a name="get" class="tsd-anchor"></a>
+					<h3>get</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">(</span>owner<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">U</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/quigleyj97/phosphor-application-markup/blob/426abeb/src/builtin/index.ts#L13">builtin/index.ts:13</a></li>
+									<li>Defined in <a href="https://github.com/quigleyj97/phosphor-application-markup/blob/7d7a934/src/factory.ts#L142">factory.ts:142</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Register PAM default items to a factory.</p>
-								</div>
-								<p>This is called automatically for the global factory, but will need to be
-								manually called for anything else.</p>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>factory: <a href="../classes/_factory_.widgetfactory.html" class="tsd-signature-type">WidgetFactory</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The factory to register against</p>
-									</div>
+									<h5>owner: <span class="tsd-signature-type">T</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">U</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+					<a name="set" class="tsd-anchor"></a>
+					<h3>set</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">set<span class="tsd-signature-symbol">(</span>owner<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/quigleyj97/phosphor-application-markup/blob/7d7a934/src/factory.ts#L143">factory.ts:143</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>owner: <span class="tsd-signature-type">T</span></h5>
+								</li>
+								<li>
+									<h5>value: <span class="tsd-signature-type">U</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -122,33 +176,62 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class="label tsd-is-external">
-						<span>Internals</span>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_index_.html">"index"</a>
-					</li>
-					<li class="label tsd-is-external">
-						<span>Externals</span>
-					</li>
-					<li class="current tsd-kind-external-module tsd-is-external">
-						<a href="_builtin_index_.html">"builtin/index"</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="_builtin_wrapper_.html">"builtin/wrapper"</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="_factory_.html">"factory"</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="_loader_.html">"loader"</a>
-					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-external">
-						<a href="_builtin_index_.html#registerdefaults" class="tsd-kind-icon">Register<wbr>Defaults</a>
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="../classes/markuploader.html" class="tsd-kind-icon">Markup<wbr>Loader</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-is-external">
+						<a href="../classes/widgetfactory.html" class="tsd-kind-icon">Widget<wbr>Factory</a>
+						<ul>
+							<li class="current tsd-kind-interface tsd-parent-kind-class tsd-has-type-parameter tsd-is-external">
+								<a href="widgetfactory.iattachedproperty.html" class="tsd-kind-icon">IAttached<wbr>Property</a>
+								<ul>
+									<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+										<a href="widgetfactory.iattachedproperty.html#get" class="tsd-kind-icon">get</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+										<a href="widgetfactory.iattachedproperty.html#set" class="tsd-kind-icon">set</a>
+									</li>
+								</ul>
+							</li>
+							<li class=" tsd-kind-type-alias tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="../classes/widgetfactory.html#constructortype" class="tsd-kind-icon">Constructor<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
+								<a href="../classes/widgetfactory.html#ctorregistry" class="tsd-kind-icon">ctor<wbr>Registry</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
+								<a href="../classes/widgetfactory.html#propregistry" class="tsd-kind-icon">prop<wbr>Registry</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="../classes/widgetfactory.html#global" class="tsd-kind-icon">global</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="../classes/widgetfactory.html#createwidget" class="tsd-kind-icon">create<wbr>Widget</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="../classes/widgetfactory.html#getproperty" class="tsd-kind-icon">get<wbr>Property</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="../classes/widgetfactory.html#registerproperty" class="tsd-kind-icon">register<wbr>Property</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="../classes/widgetfactory.html#registerwidget" class="tsd-kind-icon">register<wbr>Widget</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="../globals.html#domwrapper" class="tsd-kind-icon">DOMWrapper</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="../globals.html#registerdefaults" class="tsd-kind-icon">Register<wbr>Defaults</a>
 					</li>
 				</ul>
 			</nav>

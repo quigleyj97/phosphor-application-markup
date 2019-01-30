@@ -56,10 +56,7 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_factory_.html">&quot;factory&quot;</a>
-				</li>
-				<li>
-					<a href="_factory_.widgetfactory.html">WidgetFactory</a>
+					<a href="widgetfactory.html">WidgetFactory</a>
 				</li>
 			</ul>
 			<h1>Class WidgetFactory</h1>
@@ -74,6 +71,30 @@
 					<div class="lead">
 						<p>A widget factory for PAM applications.</p>
 					</div>
+					<p>To add your own widgets and properties to the PAM markup, use this factory
+					to make them available to the parser.</p>
+					<p>For example, if you had a <code>PuppyWidget</code> that you wanted to use:</p>
+					<pre><code class="language-ts">WidgetFactory.global.registerWidget(<span class="hljs-string">"Puppy"</span>, PuppyWidget);</code></pre>
+					<p>Now you can use your <code>PuppyWidget</code> in PAM:</p>
+					<pre><code class="language-xml"> <span class="hljs-tag">&lt;<span class="hljs-name">TabPanel</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">Puppy</span> /&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">Puppy</span> /&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-name">TabPanel</span>&gt;</span></code></pre>
+					<p>You can name widgets whatever you like, as long as they are valid XML tag
+						names. That means you can have a <code>Dog.Puppy</code>, <code>_Puppy42</code>, and even <code>ಠ_ಠ</code> as
+					names!</p>
+					<h4 id="attached-properties">Attached Properties</h4>
+					<p>Attached Properties follow along the same lines as above, with one important
+						caveat: <em>All Attached Property names must begin with an uppercase character!</em>
+						This is to distinguish them from regular attributes, which are copied to the
+					HTML DOM node directly.</p>
+					<pre><code class="language-xml"> <span class="hljs-tag">&lt;<span class="hljs-name">TabPanel</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">Puppy</span> <span class="hljs-attr">MyPuppyProp</span>=<span class="hljs-string">"5"</span> /&gt;</span> <span class="hljs-comment">&lt;!--works--&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">Puppy</span> <span class="hljs-attr">myOtherProp</span>=<span class="hljs-string">"3"</span> /&gt;</span> <span class="hljs-comment">&lt;!--doesn't work--&gt;</span>
+ <span class="hljs-tag">&lt;/<span class="hljs-name">TabPanel</span>&gt;</span></code></pre>
+					<p>Another thing to keep in mind is that right now, AttachedProperties must be
+						strings. I hope to fix this sooner or later, but don&#39;t have a workaround
+					right now.</p>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -91,30 +112,30 @@
 						<section class="tsd-index-section tsd-is-external">
 							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-interface tsd-parent-kind-class tsd-has-type-parameter tsd-is-external"><a href="../interfaces/_factory_.widgetfactory.iattachedproperty.html" class="tsd-kind-icon">IAttached<wbr>Property</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-class tsd-has-type-parameter tsd-is-external"><a href="../interfaces/widgetfactory.iattachedproperty.html" class="tsd-kind-icon">IAttached<wbr>Property</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-external">
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-type-alias tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="_factory_.widgetfactory.html#constructor" class="tsd-kind-icon">Constructor</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="widgetfactory.html#constructortype" class="tsd-kind-icon">Constructor<wbr>Type</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="_factory_.widgetfactory.html#ctorregistry" class="tsd-kind-icon">ctor<wbr>Registry</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="_factory_.widgetfactory.html#propregistry" class="tsd-kind-icon">prop<wbr>Registry</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="_factory_.widgetfactory.html#global" class="tsd-kind-icon">global</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="widgetfactory.html#ctorregistry" class="tsd-kind-icon">ctor<wbr>Registry</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="widgetfactory.html#propregistry" class="tsd-kind-icon">prop<wbr>Registry</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="widgetfactory.html#global" class="tsd-kind-icon">global</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-external">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_factory_.widgetfactory.html#createwidget" class="tsd-kind-icon">create<wbr>Widget</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_factory_.widgetfactory.html#getproperty" class="tsd-kind-icon">get<wbr>Property</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_factory_.widgetfactory.html#registerproperty" class="tsd-kind-icon">register<wbr>Property</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_factory_.widgetfactory.html#registerwidget" class="tsd-kind-icon">register<wbr>Widget</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="widgetfactory.html#createwidget" class="tsd-kind-icon">create<wbr>Widget</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="widgetfactory.html#getproperty" class="tsd-kind-icon">get<wbr>Property</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="widgetfactory.html#registerproperty" class="tsd-kind-icon">register<wbr>Property</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="widgetfactory.html#registerwidget" class="tsd-kind-icon">register<wbr>Widget</a></li>
 							</ul>
 						</section>
 					</div>
@@ -123,18 +144,22 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Type aliases</h2>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-class tsd-is-static tsd-is-external">
-					<a name="constructor" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> Constructor</h3>
-					<div class="tsd-signature tsd-kind-icon">Constructor<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<a name="constructortype" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> Constructor<wbr>Type</h3>
+					<div class="tsd-signature tsd-kind-icon">Constructor<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/quigleyj97/phosphor-application-markup/blob/426abeb/src/factory.ts#L105">factory.ts:105</a></li>
+							<li>Defined in <a href="https://github.com/quigleyj97/phosphor-application-markup/blob/7d7a934/src/factory.ts#L150">factory.ts:150</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>A convenience type to express a constructor in a covariant way</p>
+							<p>A convenience type to express a constructor in a covariant way.</p>
 						</div>
+						<dl class="tsd-comment-tags">
+							<dt>internal</dt>
+							<dd></dd>
+						</dl>
 					</div>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
@@ -148,7 +173,7 @@
 									<li class="tsd-description">
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/quigleyj97/phosphor-application-markup/blob/426abeb/src/factory.ts#L105">factory.ts:105</a></li>
+												<li>Defined in <a href="https://github.com/quigleyj97/phosphor-application-markup/blob/7d7a934/src/factory.ts#L150">factory.ts:150</a></li>
 											</ul>
 										</aside>
 										<h4 class="tsd-parameters-title">Parameters</h4>
@@ -169,30 +194,30 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
 					<a name="ctorregistry" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> ctor<wbr>Registry</h3>
-					<div class="tsd-signature tsd-kind-icon">ctor<wbr>Registry<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new Map&lt;string, WidgetFactory.Constructor&gt;()</span></div>
+					<div class="tsd-signature tsd-kind-icon">ctor<wbr>Registry<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new Map&lt;string, WidgetFactory.ConstructorType&gt;()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/quigleyj97/phosphor-application-markup/blob/426abeb/src/factory.ts#L7">factory.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/quigleyj97/phosphor-application-markup/blob/7d7a934/src/factory.ts#L47">factory.ts:47</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
 					<a name="propregistry" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> prop<wbr>Registry</h3>
-					<div class="tsd-signature tsd-kind-icon">prop<wbr>Registry<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_factory_.widgetfactory.iattachedproperty.html" class="tsd-signature-type">IAttachedProperty</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Widget</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new Map&lt;string, WidgetFactory.IAttachedProperty&gt;()</span></div>
+					<div class="tsd-signature tsd-kind-icon">prop<wbr>Registry<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/widgetfactory.iattachedproperty.html" class="tsd-signature-type">IAttachedProperty</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Widget</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new Map&lt;string, WidgetFactory.IAttachedProperty&gt;()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/quigleyj97/phosphor-application-markup/blob/426abeb/src/factory.ts#L8">factory.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/quigleyj97/phosphor-application-markup/blob/7d7a934/src/factory.ts#L48">factory.ts:48</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
 					<a name="global" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> global</h3>
-					<div class="tsd-signature tsd-kind-icon">global<span class="tsd-signature-symbol">:</span> <a href="_factory_.widgetfactory.html" class="tsd-signature-type">WidgetFactory</a><span class="tsd-signature-symbol"> =&nbsp;new WidgetFactory()</span></div>
+					<div class="tsd-signature tsd-kind-icon">global<span class="tsd-signature-symbol">:</span> <a href="widgetfactory.html" class="tsd-signature-type">WidgetFactory</a><span class="tsd-signature-symbol"> =&nbsp;new WidgetFactory()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/quigleyj97/phosphor-application-markup/blob/426abeb/src/factory.ts#L89">factory.ts:89</a></li>
+							<li>Defined in <a href="https://github.com/quigleyj97/phosphor-application-markup/blob/7d7a934/src/factory.ts#L129">factory.ts:129</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -214,7 +239,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/quigleyj97/phosphor-application-markup/blob/426abeb/src/factory.ts#L68">factory.ts:68</a></li>
+									<li>Defined in <a href="https://github.com/quigleyj97/phosphor-application-markup/blob/7d7a934/src/factory.ts#L108">factory.ts:108</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -239,13 +264,13 @@
 					<a name="getproperty" class="tsd-anchor"></a>
 					<h3>get<wbr>Property</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Property<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_factory_.widgetfactory.iattachedproperty.html" class="tsd-signature-type">IAttachedProperty</a></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Property<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/widgetfactory.iattachedproperty.html" class="tsd-signature-type">IAttachedProperty</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/quigleyj97/phosphor-application-markup/blob/426abeb/src/factory.ts#L80">factory.ts:80</a></li>
+									<li>Defined in <a href="https://github.com/quigleyj97/phosphor-application-markup/blob/7d7a934/src/factory.ts#L120">factory.ts:120</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -262,7 +287,7 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_factory_.widgetfactory.iattachedproperty.html" class="tsd-signature-type">IAttachedProperty</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/widgetfactory.iattachedproperty.html" class="tsd-signature-type">IAttachedProperty</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -270,13 +295,13 @@
 					<a name="registerproperty" class="tsd-anchor"></a>
 					<h3>register<wbr>Property</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">register<wbr>Property<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, prop<span class="tsd-signature-symbol">: </span><a href="../interfaces/_factory_.widgetfactory.iattachedproperty.html" class="tsd-signature-type">IAttachedProperty</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">register<wbr>Property<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, prop<span class="tsd-signature-symbol">: </span><a href="../interfaces/widgetfactory.iattachedproperty.html" class="tsd-signature-type">IAttachedProperty</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/quigleyj97/phosphor-application-markup/blob/426abeb/src/factory.ts#L49">factory.ts:49</a></li>
+									<li>Defined in <a href="https://github.com/quigleyj97/phosphor-application-markup/blob/7d7a934/src/factory.ts#L89">factory.ts:89</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -293,7 +318,7 @@
 									</div>
 								</li>
 								<li>
-									<h5>prop: <a href="../interfaces/_factory_.widgetfactory.iattachedproperty.html" class="tsd-signature-type">IAttachedProperty</a></h5>
+									<h5>prop: <a href="../interfaces/widgetfactory.iattachedproperty.html" class="tsd-signature-type">IAttachedProperty</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The AttachedProperty being registered.</p>
 										<h4 id="notes">Notes</h4>
@@ -313,13 +338,13 @@
 					<a name="registerwidget" class="tsd-anchor"></a>
 					<h3>register<wbr>Widget</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">register<wbr>Widget<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, ctor<span class="tsd-signature-symbol">: </span><a href="_factory_.widgetfactory.html#constructor" class="tsd-signature-type">Constructor</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">register<wbr>Widget<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, ctor<span class="tsd-signature-symbol">: </span><a href="widgetfactory.html#constructortype" class="tsd-signature-type">ConstructorType</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/quigleyj97/phosphor-application-markup/blob/426abeb/src/factory.ts#L28">factory.ts:28</a></li>
+									<li>Defined in <a href="https://github.com/quigleyj97/phosphor-application-markup/blob/7d7a934/src/factory.ts#L68">factory.ts:68</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -336,7 +361,7 @@
 									</div>
 								</li>
 								<li>
-									<h5>ctor: <a href="_factory_.widgetfactory.html#constructor" class="tsd-signature-type">Constructor</a></h5>
+									<h5>ctor: <a href="widgetfactory.html#constructortype" class="tsd-signature-type">ConstructorType</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The constructor for the widget being registered.</p>
 										<h4 id="notes">Notes</h4>
@@ -362,67 +387,55 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class="label tsd-is-external">
-						<span>Internals</span>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_index_.html">"index"</a>
-					</li>
-					<li class="label tsd-is-external">
-						<span>Externals</span>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="../modules/_builtin_index_.html">"builtin/index"</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="../modules/_builtin_wrapper_.html">"builtin/wrapper"</a>
-					</li>
-					<li class="current tsd-kind-external-module tsd-is-external">
-						<a href="../modules/_factory_.html">"factory"</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="../modules/_loader_.html">"loader"</a>
-					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class tsd-is-external">
+						<a href="markuploader.html" class="tsd-kind-icon">Markup<wbr>Loader</a>
+					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-class tsd-parent-kind-external-module tsd-is-external">
-						<a href="_factory_.widgetfactory.html" class="tsd-kind-icon">Widget<wbr>Factory</a>
+					<li class="current tsd-kind-class tsd-is-external">
+						<a href="widgetfactory.html" class="tsd-kind-icon">Widget<wbr>Factory</a>
 						<ul>
 							<li class=" tsd-kind-interface tsd-parent-kind-class tsd-has-type-parameter tsd-is-external">
-								<a href="../interfaces/_factory_.widgetfactory.iattachedproperty.html" class="tsd-kind-icon">IAttached<wbr>Property</a>
+								<a href="../interfaces/widgetfactory.iattachedproperty.html" class="tsd-kind-icon">IAttached<wbr>Property</a>
 							</li>
 							<li class=" tsd-kind-type-alias tsd-parent-kind-class tsd-is-static tsd-is-external">
-								<a href="_factory_.widgetfactory.html#constructor" class="tsd-kind-icon">Constructor</a>
+								<a href="widgetfactory.html#constructortype" class="tsd-kind-icon">Constructor<wbr>Type</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
-								<a href="_factory_.widgetfactory.html#ctorregistry" class="tsd-kind-icon">ctor<wbr>Registry</a>
+								<a href="widgetfactory.html#ctorregistry" class="tsd-kind-icon">ctor<wbr>Registry</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-external">
-								<a href="_factory_.widgetfactory.html#propregistry" class="tsd-kind-icon">prop<wbr>Registry</a>
+								<a href="widgetfactory.html#propregistry" class="tsd-kind-icon">prop<wbr>Registry</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
-								<a href="_factory_.widgetfactory.html#global" class="tsd-kind-icon">global</a>
+								<a href="widgetfactory.html#global" class="tsd-kind-icon">global</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
-								<a href="_factory_.widgetfactory.html#createwidget" class="tsd-kind-icon">create<wbr>Widget</a>
+								<a href="widgetfactory.html#createwidget" class="tsd-kind-icon">create<wbr>Widget</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
-								<a href="_factory_.widgetfactory.html#getproperty" class="tsd-kind-icon">get<wbr>Property</a>
+								<a href="widgetfactory.html#getproperty" class="tsd-kind-icon">get<wbr>Property</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
-								<a href="_factory_.widgetfactory.html#registerproperty" class="tsd-kind-icon">register<wbr>Property</a>
+								<a href="widgetfactory.html#registerproperty" class="tsd-kind-icon">register<wbr>Property</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
-								<a href="_factory_.widgetfactory.html#registerwidget" class="tsd-kind-icon">register<wbr>Widget</a>
+								<a href="widgetfactory.html#registerwidget" class="tsd-kind-icon">register<wbr>Widget</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="../globals.html#domwrapper" class="tsd-kind-icon">DOMWrapper</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="../globals.html#registerdefaults" class="tsd-kind-icon">Register<wbr>Defaults</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
