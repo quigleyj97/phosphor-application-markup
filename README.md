@@ -1,5 +1,8 @@
 # Phosphor Application Markup
 
+[![docs](https://img.shields.io/badge/docs-PAM-green.svg?style=flat-square)](https://quigleyj97.github.io/phosphor-application-markup/api)
+[![license](https://img.shields.io/github/license/quigleyj97/phosphor-application-markup.svg?style=flat-square)](https://github.com/quigleyj97/phosphor-application-markup/blob/master/LICENSE.md)
+
 PAM is an experimental framework for writing Phosphor widgets as XML markup.
 This lets developers easily create complex components without needing to rely
 on direct HTML manipulation or a VDOM library.
@@ -26,46 +29,15 @@ Here's a short motivating example:
 
 [See a live example here](https://quigleyj97.github.io/phosphor-application-markup/demo.html)
 
-The equivalent JS code for this is cumbersome, and repetitive:
-
-```ts
-class MyWidget extends Widget {
-    public layout: SingletonLayout;
-
-    constructor() {
-        const panel = new BoxPanel();
-        this.layout.widget = panel;
-        const label = new Widget({node: document.createElement("label")});
-        label.node.textContent = "Hello, world!";
-        BoxLayout.setSizeBasis(label, 50);
-        BoxLayout.setStretch(label, 0);
-        panel.addWidget(label);
-        const panel2 = new BoxPanel({direction: "left-to-right"});
-        BoxLayout.setStretch(panel2, 1);
-        const img1 = new Widget({node: document.createElement("img")});
-        img1.href = "https://placekitten.com/g/200/300";
-        img1.alt = "Kitten";
-        const img2 = new Widget({node: document.createElement("img")});
-        img2.href = "http://place-puppy.com/200x200";
-        img2.alt = "Pupper";
-        panel2.addWidget(img1);
-        panel2.addWidget(img2);
-        panel.addwidget(panel2);
-        // whew!
-    }
-}
-```
-
-In the future, this library will offer facilities for data binding, but for now
-it's just a demo.
+The equivalent JS code is long, and distracting. With PAM, you can focus on the
+interactions behind the view, and use straight-forward, idomatic XAML for the
+layout and components.
 
 ## Getting Started
 
 To write PAM, use the widget names as tags. Each child will get added to widgets
 with layouts, each upper-case attribute will be treated as an AttachedProperty,
 and each lower-case attribute will get copied to the widget node.
-
-[Detailed documentation is available here.](https://quigleyj97.github.io/phosphor-application-markup/)
 
 ```xml
 <TabPanel>
@@ -82,8 +54,7 @@ To load the XML, instantiate a `MarkupLoader` and use it:
 
 ```ts
 const loader = new MarkupLoader();
-const myWidget = loader.loadXml("xml-string-here");
-// Use myWidget as you like
+const myWidget = loader.loadXml("<Panel />");
 ```
 
 You can register custom properties and widgets using `WidgetFactory`. There's
@@ -94,3 +65,24 @@ WidgetFactory.global.registerWidget("MyFancyWidget", MyFancyWidget);
 
 WidgetFactory.global.registerProperty("MyProperty", MyAttachedProperty);
 ```
+
+## Building
+
+Building PAM is easy:
+
+```bash
+yarn
+yarn build
+yarn test
+```
+
+To build the kitchen sink example, follow these steps:
+
+```bash
+cd ./examples
+yarn
+yarn tsc
+yarn webpack
+```
+
+You should now see the compiled output in /docs/example.

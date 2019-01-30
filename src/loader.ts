@@ -2,7 +2,29 @@ import { WidgetFactory } from "./factory";
 import { Widget, PanelLayout } from "@phosphor/widgets";
 
 /**
- * Injests some markup, and returns a widget
+ * Class for loading PAM markup and transforming it into a Phosphor widget.
+ * 
+ * PAM markup is relatively straight-forward, and is written in XML. A simple
+ * view might look like this:
+ * 
+ * ```xml
+ *  <BoxPanel>
+ *      <Label BoxLayout.SizeBasis="10">Hello, world!</Label>
+ *      <Image href="https://placekitten.com/g/300/300" />
+ *  </BoxPanel>
+ * ```
+ * 
+ * This creates a [`BoxPanel`](http://phosphorjs.github.io/phosphor/api/widgets/classes/boxpanel.html)
+ * with a Label and an Image. The Label has an "Attached Property" specified-
+ * `BoxLayout.SizeBasis` tells BoxLayout how big (in pixels) to make a
+ * particular widget.
+ * 
+ * Element attributes in lowercase (such as data attributes and HTML attrs) get
+ * copied to the DOM, so the `img` element of the `Image` widget above gets it's
+ * `src` set.
+ * 
+ * See [the Builtin Reference](/reference/builtin-reference.md) for details on
+ * what is included with base PAM
  */
 export class MarkupLoader {
     private factory: WidgetFactory;
