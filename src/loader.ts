@@ -23,7 +23,7 @@ import { Widget, PanelLayout } from "@phosphor/widgets";
  * copied to the DOM, so the `img` element of the `Image` widget above gets it's
  * `src` set.
  * 
- * See [the Builtin Reference](/reference/builtin-reference.md) for details on
+ * See [the Builtin Reference](/phosphor-application-markup/reference/builtin-reference) for details on
  * what is included with base PAM
  */
 export class MarkupLoader {

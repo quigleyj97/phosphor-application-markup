@@ -1,7 +1,7 @@
 # Phosphor Application Markup
 
 [![docs](https://img.shields.io/badge/docs-PAM-green.svg?style=flat-square)](https://quigleyj97.github.io/phosphor-application-markup/api)
-[![license](https://img.shields.io/github/license/quigleyj97/phosphor-application-markup.svg?style=flat-square)](https://github.com/quigleyj97/phosphor-application-markup/blob/master/LICENSE.md)
+[![license](https://img.shields.io/github/license/quigleyj97/phosphor-application-markup.svg?style=flat-square)](https://github.com/quigleyj97/phosphor-application-markup/blob/master/LICENSE)
 
 PAM is an experimental framework for writing Phosphor widgets as XML markup.
 This lets developers easily create complex components without needing to rely

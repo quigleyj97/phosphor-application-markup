@@ -65,8 +65,8 @@
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
 				<h1 id="phosphor-application-markup">Phosphor Application Markup</h1>
-				<p><a href="https://quigleyj97.github.io/phosphor-application-markup/"><img src="https://img.shields.io/badge/docs-PAM-green.svg?style=flat-square" alt="docs"></a>
-				<a href="https://github.com/quigleyj97/phosphor-application-markup/blob/master/LICENSE.md"><img src="https://img.shields.io/github/license/quigleyj97/phosphor-application-markup.svg?style=flat-square" alt="license"></a></p>
+				<p><a href="https://quigleyj97.github.io/phosphor-application-markup/api"><img src="https://img.shields.io/badge/docs-PAM-green.svg?style=flat-square" alt="docs"></a>
+				<a href="https://github.com/quigleyj97/phosphor-application-markup/blob/master/LICENSE"><img src="https://img.shields.io/github/license/quigleyj97/phosphor-application-markup.svg?style=flat-square" alt="license"></a></p>
 				<p>PAM is an experimental framework for writing Phosphor widgets as XML markup.
 					This lets developers easily create complex components without needing to rely
 				on direct HTML manipulation or a VDOM library.</p>
@@ -109,6 +109,17 @@
 				<pre><code class="language-ts">WidgetFactory.global.registerWidget(<span class="hljs-string">"MyFancyWidget"</span>, MyFancyWidget);
 
 WidgetFactory.global.registerProperty(<span class="hljs-string">"MyProperty"</span>, MyAttachedProperty);</code></pre>
+				<h2 id="building">Building</h2>
+				<p>Building PAM is easy:</p>
+				<pre><code class="language-bash">yarn
+yarn build
+yarn <span class="hljs-built_in">test</span></code></pre>
+				<p>To build the kitchen sink example, follow these steps:</p>
+				<pre><code class="language-bash"><span class="hljs-built_in">cd</span> ./examples
+yarn
+yarn tsc
+yarn webpack</code></pre>
+				<p>You should now see the compiled output in /docs/example.</p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -126,6 +137,9 @@ WidgetFactory.global.registerProperty(<span class="hljs-string">"MyProperty"</sp
 					</li>
 					<li class=" tsd-kind-class tsd-is-external">
 						<a href="classes/widgetfactory.html" class="tsd-kind-icon">Widget<wbr>Factory</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#typednodewidget" class="tsd-kind-icon">Typed<wbr>Node<wbr>Widget</a>
 					</li>
 					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
 						<a href="globals.html#domwrapper" class="tsd-kind-icon">DOMWrapper</a>
