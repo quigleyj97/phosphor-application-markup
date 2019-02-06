@@ -27,7 +27,7 @@ Here's a short motivating example:
 </BoxPanel>
 ```
 
-[See a live example here](https://quigleyj97.github.io/phosphor-application-markup/demo.html)
+[See a live example here](https://quigleyj97.github.io/phosphor-application-markup/example/demo.html)
 
 The equivalent JS code is long, and distracting. With PAM, you can focus on the
 interactions behind the view, and use straight-forward, idomatic XAML for the
